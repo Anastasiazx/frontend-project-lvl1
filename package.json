@@ -1,0 +1,27 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "description": "making brain-games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anastasiazx/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "project",
+    "brain-games"
+  ],
+  "author": "Anastasiia Piatiletova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anastasiazx/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/Anastasiazx/frontend-project-lvl1#readme"
+}
