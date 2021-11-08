@@ -22,9 +22,7 @@ const parityCheck = () => {
       console.log('Correct!');
     }
   }
-  console.log(`Congratulations, ${userName}!`);
-  return true;
+  return console.log(`Congratulations, ${userName}!`);
 };
 
-parityCheck();
 export default parityCheck;
