@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import greetings from './cli.js';
+import greetings from '../src/cli.js';
 
 const parityCheck = () => {
   const userName = greetings();
