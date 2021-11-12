@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
 import greetings from '../src/cli.js';
 
-const correctResult = (num1, num2, operation) => {
+const correctAnswer = (number, number2, operation) => {
   let result;
   if (operation === '+') {
-    result = num1 + num2;
+    result = number + number2;
   } if (operation === '-') {
-    result = num1 - num2;
+    result = number - number2;
   } if (operation === '*') {
-    result = num1 * num2;
+    result = number * number2;
   }
   return result;
 };
@@ -18,14 +18,14 @@ const calculate = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i < 4; i += 1) {
-    const num1 = Math.floor(Math.random() * 100);
-    const num2 = Math.floor(Math.random() * 100);
+    const number = Math.floor(Math.random() * 100);
+    const number2 = Math.floor(Math.random() * 100);
     const operators = ['+', '-', '*'];
     const operator = operators[Math.floor(Math.random() * operators.length)];
-    const count = `${num1} ${operator} ${num2}`;
+    const count = `${number} ${operator} ${number2}`;
     console.log(`Question: ${count}`);
     const userAnswer = Number(readlineSync.question('Your answer: '));
-    const result = correctResult(num1, num2, operator);
+    const result = correctAnswer(number, number2, operator);
 
     if (userAnswer !== result) {
       return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'. \nLet's try again, ${userName}!`);
@@ -37,4 +37,3 @@ const calculate = () => {
 };
 
 export default calculate;
-calculate();
