@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import calculate from '../games/calculator.js';
+import play from '../src/index.js';
+import * as calc from '../games/calculator.js';
 
-calculate();
+play(calc.rules, calc.calculate);
