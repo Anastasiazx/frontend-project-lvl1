@@ -1,15 +1,10 @@
 const correctAnswer = (number, number2) => {
   let result;
 
-  if (number === 0) {
-    result = number2;
-  }
-
-  while (number2 !== 0) {
-    if (number > number2) {
-      result = number - number2;
-    } if (number < number2) {
-      result = number2 - number;
+  for (let i = number; i > 0; i -= 1) {
+    if (number % i === 0 && number2 % i === 0) {
+      result = i;
+      break;
     }
   }
   return result;
@@ -28,5 +23,3 @@ export const findDivisor = () => {
   array[1] = result;
   return array;
 };
-
-findDivisor();
