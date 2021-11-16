@@ -18,9 +18,9 @@ export const rules = () => {
 export const defineNumber = () => {
   const arrayNumbers = formProgression();
   const randomElement = arrayNumbers[Math.floor(Math.random() * arrayNumbers.length)];
-  const result = String();
   const index = arrayNumbers.indexOf(randomElement);
-  arrayNumbers.splice(arrayNumbers[index], 1, '..');
+  const newArray = arrayNumbers.splice(index, 1, '..');
+  const result = newArray.toString();
   const separator = ' ';
   const progression = arrayNumbers.join(separator).toString();
   const array = [`Question: ${progression}`, 'answer'];
