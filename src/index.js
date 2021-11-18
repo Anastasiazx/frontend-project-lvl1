@@ -1,14 +1,15 @@
 import readlineSync from 'readline-sync';
-import greetings from './cli.js';
 
-const play = (rules, gameMechanic) => {
-  const userName = greetings();
-  rules();
+const runEngine = (rules, getAnswer) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log(rules);
 
   for (let i = 1; i < 4; i += 1) {
-    const array = gameMechanic();
-    const result = array[1];
-    console.log(array[0]);
+    const [Question, answer] = getAnswer();
+    const result = answer;
+    console.log(Question);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== result) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.`);
@@ -21,4 +22,4 @@ const play = (rules, gameMechanic) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default play;
+export default runEngine;
