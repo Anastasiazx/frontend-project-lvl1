@@ -1,8 +1,10 @@
+import getRandomIntInclusive from '../random-numbers.js';
+
 const formProgression = () => {
   const arrayNumbers = [];
-  arrayNumbers[0] = Math.floor(Math.random() * 100);
-  const lengthArray = Math.floor(Math.random() * 5) + 5;
-  const step = Math.floor(Math.random() * 10);
+  arrayNumbers[0] = getRandomIntInclusive(0, 100);
+  const lengthArray = getRandomIntInclusive(5, 10);
+  const step = getRandomIntInclusive(1, 10);
 
   for (let i = 1; i < lengthArray; i += 1) {
     arrayNumbers[i] = arrayNumbers[i - 1] + step;
@@ -17,7 +19,7 @@ export const rules = () => {
 
 export const defineNumber = () => {
   const arrayNumbers = formProgression();
-  const randomElement = arrayNumbers[Math.floor(Math.random() * arrayNumbers.length)];
+  const randomElement = arrayNumbers[getRandomIntInclusive(0, 100) * arrayNumbers.length];
   const index = arrayNumbers.indexOf(randomElement);
   const newArray = arrayNumbers.splice(index, 1, '..');
   const result = newArray.toString();

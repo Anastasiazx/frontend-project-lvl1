@@ -1,3 +1,5 @@
+import getRandomIntInclusive from '../random-numbers.js';
+
 const correctAnswer = (number) => {
   let count = 1;
 
@@ -21,7 +23,7 @@ export const rules = () => {
 };
 
 export const findPrimeNumber = () => {
-  const number = Math.floor(Math.random() * 100);
+  const number = getRandomIntInclusive(0, 100);
   const array = [`Question: ${number}`, 'answer'];
   const result = (correctAnswer(number)) ? 'yes' : 'no';
   array[1] = result;

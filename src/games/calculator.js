@@ -1,3 +1,5 @@
+import getRandomIntInclusive from '../random-numbers.js';
+
 const correctAnswer = (number, number2, operation) => {
   let result;
   if (operation === '+') {
@@ -15,8 +17,8 @@ export const rules = () => {
 };
 
 export const calculate = () => {
-  const number = Math.floor(Math.random() * 100);
-  const number2 = Math.floor(Math.random() * 100);
+  const number = getRandomIntInclusive(0, 100);
+  const number2 = getRandomIntInclusive(0, 100);
   const operators = ['+', '-', '*'];
   const operator = operators[Math.floor(Math.random() * operators.length)];
   const count = `${number} ${operator} ${number2}`;

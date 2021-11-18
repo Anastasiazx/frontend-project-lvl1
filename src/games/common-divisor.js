@@ -1,3 +1,5 @@
+import getRandomIntInclusive from '../random-numbers.js';
+
 const correctAnswer = (number, number2) => {
   let result;
 
@@ -15,8 +17,8 @@ export const rules = () => {
 };
 
 export const findDivisor = () => {
-  const number = Math.floor(Math.random() * 100);
-  const number2 = Math.floor(Math.random() * 100);
+  const number = getRandomIntInclusive(0, 100);
+  const number2 = getRandomIntInclusive(0, 100);
   const count = `${number} ${number2}`;
   const array = [`Question: ${count}`, 'answer'];
   const result = String(correctAnswer(number, number2));
