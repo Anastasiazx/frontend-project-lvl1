@@ -1,4 +1,5 @@
 import getRandomIntInclusive from '../random-numbers.js';
+import runEngine from '../index.js';
 
 const formProgression = () => {
   const arrayNumbers = [];
@@ -13,11 +14,9 @@ const formProgression = () => {
   return arrayNumbers;
 };
 
-export const rules = () => {
-  console.log('What number is missing in the progression?');
-};
+const rules = 'What number is missing in the progression?';
 
-export const defineNumber = () => {
+const defineNumber = () => {
   const arrayNumbers = formProgression();
   const randomElement = arrayNumbers[getRandomIntInclusive(0, 100) * arrayNumbers.length];
   const index = arrayNumbers.indexOf(randomElement);
@@ -29,3 +28,6 @@ export const defineNumber = () => {
   array[1] = result;
   return array;
 };
+
+const runDefineNumber = () => runEngine(rules, defineNumber);
+export default runDefineNumber;
