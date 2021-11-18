@@ -1,5 +1,5 @@
 const getRandomIntInclusive = (min, max) => {
-  const randomNumber = Math.random() * (max - min + 1) + min;
+  const randomNumber = (Math.random() * (max - min + 1)) + min;
   return Math.floor(randomNumber);
 };
 
