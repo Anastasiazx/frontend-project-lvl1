@@ -1,4 +1,5 @@
 import getRandomIntInclusive from '../random-numbers.js';
+import runEngine from '../index.js';
 
 const correctAnswer = (number, number2) => {
   let result;
@@ -12,16 +13,17 @@ const correctAnswer = (number, number2) => {
   return result;
 };
 
-export const rules = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-};
+const rules = 'Find the greatest common divisor of given numbers.';
 
-export const findDivisor = () => {
-  const number = getRandomIntInclusive(0, 100);
-  const number2 = getRandomIntInclusive(0, 100);
+const findDivisor = () => {
+  const number = getRandomIntInclusive(1, 100);
+  const number2 = getRandomIntInclusive(1, 100);
   const count = `${number} ${number2}`;
   const array = [`Question: ${count}`, 'answer'];
   const result = String(correctAnswer(number, number2));
   array[1] = result;
   return array;
 };
+
+const runFindDivisor = () => runEngine(rules, findDivisor);
+export default runFindDivisor;
