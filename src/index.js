@@ -11,12 +11,14 @@ const play = (rules, gameMechanic) => {
     console.log(array[0]);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== result) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'. \nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     } if (userAnswer === result) {
       console.log('Correct!');
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default play;
