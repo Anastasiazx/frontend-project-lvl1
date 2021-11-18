@@ -1,4 +1,5 @@
 import getRandomIntInclusive from '../random-numbers.js';
+import runEngine from '../index.js';
 
 const correctAnswer = (number, number2, operation) => {
   let result;
@@ -12,11 +13,9 @@ const correctAnswer = (number, number2, operation) => {
   return result;
 };
 
-export const rules = () => {
-  console.log('What is the result of the expression?');
-};
+const rules = 'What is the result of the expression?';
 
-export const calculate = () => {
+const calculate = () => {
   const number = getRandomIntInclusive(0, 100);
   const number2 = getRandomIntInclusive(0, 100);
   const operators = ['+', '-', '*'];
@@ -27,3 +26,6 @@ export const calculate = () => {
   array[1] = result;
   return array;
 };
+
+const runCalculate = () => runEngine(rules, calculate);
+export default runCalculate;
