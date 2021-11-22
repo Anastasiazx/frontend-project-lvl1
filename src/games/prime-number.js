@@ -1,6 +1,8 @@
 import runEngine from '../index.js';
 import getRandomIntInclusive from '../random-numbers.js';
 
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const correctAnswer = (number) => {
   let count = 1;
 
@@ -19,15 +21,11 @@ const correctAnswer = (number) => {
   return true;
 };
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
 const findPrimeNumber = () => {
   const number = getRandomIntInclusive(0, 100);
-  const array = [`Question: ${number}`, 'answer'];
-  const result = (correctAnswer(number)) ? 'yes' : 'no';
-  array[1] = result;
-  return array;
+  const answer = (correctAnswer(number)) ? 'yes' : 'no';
+  return [`Question: ${number}`, answer];
 };
 
-const runFindPrimeNumber = () => runEngine(rules, findPrimeNumber);
-export default runFindPrimeNumber;
+const runPrimeGame = () => runEngine(rules, findPrimeNumber);
+export default runPrimeGame;

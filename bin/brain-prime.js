@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import runFindPrimeNumber from '../src/games/prime-number.js';
+import runPrimeGame from '../src/games/prime-number.js';
 
-runFindPrimeNumber();
+runPrimeGame();

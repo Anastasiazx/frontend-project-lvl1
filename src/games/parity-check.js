@@ -5,11 +5,9 @@ const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const parityCheck = () => {
   const number = getRandomIntInclusive(0, 100);
-  const array = [`Question: ${number}`, 'answer'];
-  const result = (number % 2 === 0) ? 'yes' : 'no';
-  array[1] = result;
-  return array;
+  const answer = (number % 2 === 0) ? 'yes' : 'no';
+  return [`Question: ${number}`, answer];
 };
 
-const runParityCheck = () => runEngine(rules, parityCheck);
-export default runParityCheck;
+const runEvenGame = () => runEngine(rules, parityCheck);
+export default runEvenGame;
