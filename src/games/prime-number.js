@@ -22,9 +22,9 @@ const correctAnswer = (number) => {
 };
 
 const findPrimeNumber = () => {
-  const number = getRandomIntInclusive(0, 100);
-  const answer = (correctAnswer(number)) ? 'yes' : 'no';
-  return [`Question: ${number}`, answer];
+  const question = getRandomIntInclusive(0, 100);
+  const answer = (correctAnswer(question)) ? 'yes' : 'no';
+  return [question, answer];
 };
 
 const runPrimeGame = () => runEngine(rules, findPrimeNumber);

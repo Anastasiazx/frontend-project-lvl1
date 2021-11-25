@@ -13,9 +13,9 @@ const gcd = (number1, number2) => {
 const findDivisor = () => {
   const number1 = getRandomIntInclusive(1, 100);
   const number2 = getRandomIntInclusive(1, 100);
-  const count = `${number1} ${number2}`;
+  const question = `${number1} ${number2}`;
   const answer = String(gcd(number1, number2));
-  return [`Question: ${count}`, answer];
+  return [question, answer];
 };
 
 const runGcdGame = () => runEngine(rules, findDivisor);
