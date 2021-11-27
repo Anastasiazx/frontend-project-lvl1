@@ -14,10 +14,9 @@ const formProgression = (firstElement, length, step) => {
 };
 
 const generateQuestion = (progression, hiddenIndex) => {
-  const newProgression = progression;
+  const newProgression = progression.slice();
   newProgression[hiddenIndex] = '..';
-  const separator = ' ';
-  return newProgression.join(separator);
+  return newProgression.join(' ');
 };
 
 const defineNumber = () => {
